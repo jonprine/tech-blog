@@ -1,1 +1,15 @@
-<div>You are on the homepage</div>
+<ol class="post-list">
+   {{#each posts as |post|}}
+  <li>
+    <article class="post">
+      <div class="title">
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+        <span>({{post_url}})</span>
+      </div>
+      <div class="meta">
+        <a href="/post/{{id}}"></a>
+      </div>
+    </article>
+  </li>
+   {{/each}}
+</ol>
