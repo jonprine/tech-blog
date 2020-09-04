@@ -49,6 +49,7 @@ router.post('/', (req, res) => {
       });
   });
 
+  // route for the login
   router.post('/login', (req, res) => {
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
     User.findOne({
@@ -74,6 +75,7 @@ router.post('/', (req, res) => {
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
     User.update(req.body, {
+      // checks to make sure password updated or not
       individualHooks: true,
       where: {
         id: req.params.id
