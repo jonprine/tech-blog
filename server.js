@@ -2,10 +2,15 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
-var exphbs  = require('express-handlebars');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+var exphbs  = require('express-handlebars');
+const hbs = exphbs.create({ helpers });
+
+
+
 
 const sess = {
   secret: process.env.Secret,
@@ -28,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
 
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // turn on routes
