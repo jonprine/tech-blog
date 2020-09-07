@@ -12,7 +12,7 @@ router.get('/', withAuth, (req, res) => {
       },
       attributes: [
         'id',
-        'post_url',
+        'post_text',
         'title',
         'created_at'
       ],
@@ -49,7 +49,7 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-            'post_url',
+            'post_text',
             'title',
             'created_at'
         ],
@@ -78,5 +78,9 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 })
+
+router.get('/newpost', (req, res) => {
+  res.render('new-post');
+});
 
 module.exports = router;

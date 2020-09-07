@@ -6,13 +6,16 @@
     <textarea name="comment-body"></textarea>
   </div>
 
+{{/if}}
   <div>
     <button type="submit">add comment</button>
   </div>
 </form>
-{{/if}}
 
+{{format_plural "comment" comments.length}}
 {{> comments post.comments}}
+
+
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
