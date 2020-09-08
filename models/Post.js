@@ -20,6 +20,9 @@ Post.init(
       post_text: {
         type: DataTypes.TEXT,
         allowNull: false,
+        validate: {
+          len:[1]
+        }
       },
       user_id: {
         type: DataTypes.INTEGER,
