@@ -9,7 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 var exphbs  = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
 
-
+require('dotenv').config();
 
 
 const sess = {
