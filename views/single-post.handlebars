@@ -1,5 +1,7 @@
 {{> post-info post }}
 
+{{format_plural "Comment" comments.length}}
+{{> comments post.comments}}
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
@@ -8,12 +10,9 @@
 
 {{/if}}
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit">Add Comment</button>
   </div>
 </form>
-
-{{format_plural "comment" comments.length}}
-{{> comments post.comments}}
 
 
 

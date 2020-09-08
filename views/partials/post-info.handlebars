@@ -7,5 +7,7 @@
   </div>
   <div class="body posts">
     {{post_text}}
+      
   </div>
+  <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
 </article>

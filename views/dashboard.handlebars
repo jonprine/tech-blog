@@ -1,8 +1,10 @@
-{{#if posts.length}}
-<section>
   <div>
     <h2>Your Dashboard</h2>
+    <button type="submit"><a href="/dashboard/newpost" class="btn">Create New Post</button>
   </div>
+
+{{#if posts.length}}
+<section>
   <ol>
     {{#each posts as |post|}}
     <ul>
@@ -11,14 +13,18 @@
           <a href="/post/{{id}}">{{title}}</a><span><strong>Posted by {{user.username}} on
               {{format_date created_at}}</strong></span>
         </div>
+        <div>
+
+
+        </div>
       </article>
-      <div>
-        <button type="submit"><a href="/dashboard/edit/{{post.id}}" class="btn">Edit post</a>
-          <button type="submit"><a href="/dashboard/newpost" class="btn">Create New Post</button>
-      </div>
+      <button type="submit"><a href="/dashboard/edit/{{post.id}}" class="btn">Edit Post</a>
     </ul>
     {{/each}}
+
+
   </ol>
 </section>
+
 
 {{/if}}
