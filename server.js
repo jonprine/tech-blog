@@ -13,7 +13,7 @@ require('dotenv').config();
 
 
 const sess = {
-  secret: process.env.Secret,
+  secret: 'superSecretSecret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
